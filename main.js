@@ -1,76 +1,72 @@
-console.log("hello world ")  
+// *********************************************************** //
+// *** Time Tracking Dashboard | A Frontend Mentor Project *** //
+// *********************************************************** //
 
-
-const daily = document.querySelector('#daily')
-const weekly =document.querySelector('#weekly')
-const monthly = document.querySelector('#monthly')
-// const workCur = document.querySelector('.work-cur')
-// const workPrev = document.querySelector('.wrok-prev')
-// const playCur = document.querySelector('.play-cur')
-// const playPrev = document.querySelector('.play-prev')
-// const exerciseCur = document.querySelector('.exercise-cur')
-// const exercisePrev = document.querySelector('.exercise-prev')
-// const studyCur = document.querySelector('.study-cur')
-// const studyPrev = document.querySelector('.study-prev')
-// const socialCur = document.querySelector('.social-cur')
-// const socialPrev = document.querySelector('.social-prev')
-// const selfCur = document.querySelector('.self-cur')
-// const selfPrev = document.querySelector('.self-prev')
-const current = document.querySelectorAll('.current')
-const previous = document.querySelectorAll('.Previous')
-
-// const data = fetch('./data.json')
-//              .then((response)=>response.json())
-//              .then(data=>console.log(data));
-
-const handelDaily = async ()=>{
-    const fetchPromise  = await fetch('./data.json')
-    const data = await fetchPromise.json();
-    current.forEach((cur, index)=>{
-        // console.log(data[index].timeframes.daily.current)
-        const x = data[index].timeframes.daily.current
-        cur.textContent = `${x} hr`
+// Get Timer Data from json file - default to daily data
+async function fetchTimerData(period = 'daily') {
+    try {
+      const res = await fetch("./data.json");
+      if (!res.ok) {
+        throw new Error(res.status)
+      }
+      const data = await res.json();
+      parseData(period, data)
+    } catch (error) {
+      console.error(error)
+    } 
+  }
+  
+  // Parse data before passing to render function
+  function parseData(period, data) {
+    if (period === 'daily') {
+      const dailyData = data.map((item) => item.timeframes.daily);
+      render('daily', dailyData)
+    } else if (period === 'weekly') {
+      const weeklyData = data.map((item) => item.timeframes.weekly); 
+      render('weekly', weeklyData)
+    } else {
+      const monthlyData = data.map((item) => item.timeframes.monthly);
+      render('monthly', monthlyData)
+    }
+  }
+  
+  // fetch data when page loads
+  fetchTimerData()
+  
+  // Listen for clicks on period selectors
+  document.getElementById('period-selectors').addEventListener('click', e => {
+    if (e.target.id === 'daily' || e.target.id === 'weekly' || e.target.id === 'monthly') {
+      fetchTimerData(e.target.id)
+    }
+  });
+  
+  // render dashboard data
+  function render(period, data) {
+    // select all the current-data classes
+    const currentDataEls = Array.from(document.getElementsByClassName('current-data'));
+    // populate current data elements with current data
+    currentDataEls.forEach((el, i) => {
+      data[i].current === 1 // check for hour values of 1
+        ? el.textContent = `${data[i].current}hr` 
+        : el.textContent = `${data[i].current}hrs`
     });
-    previous.forEach((prev, index)=>{
-        // console.log(data[index].timeframes.daily.previous)
-        const x = data[index].timeframes.daily.previous
-        prev.textContent = `previous - ${x} hrs`
-    })
-}
-const handelWeekly = async ()=>{
-    const fetchPromise  = await fetch('./data.json')
-    const data = await fetchPromise.json();
-    current.forEach((cur, index)=>{
-        // console.log(data[index].timeframes.daily.current)
-        const x = data[index].timeframes.weekly.current
-        cur.textContent = `${x} hr`
+  
+    // select all the previous-data classes
+    const previousDataEls = Array.from(document.getElementsByClassName('previous-data'));
+    // populate previous data elements with previous data
+    previousDataEls.forEach((el, i) => {
+      data[i].previous === 1 // check for hour values of 1
+        ? el.textContent = `${data[i].previous}hr`
+        : el.textContent = `${data[i].previous}hrs`
     });
-    previous.forEach((prev, index)=>{
-        // console.log(data[index].timeframes.daily.previous)
-        const x = data[index].timeframes.weekly.previous
-        prev.textContent = `last week - ${x} hrs`
-    })
-}
-const handelMonthly = async ()=>{
-    const fetchPromise  = await fetch('./data.json')
-    const data = await fetchPromise.json();
-    current.forEach((cur, index)=>{
-        // console.log(data[index].timeframes.daily.current)
-        const x = data[index].timeframes.monthly.current
-        cur.textContent = `${x}hrs`
-    });
-    previous.forEach((prev, index)=>{
-        // console.log(data[index].timeframes.daily.previous)
-        const x = data[index].timeframes.monthly.previous
-        prev.textContent = `last month-${x} hrs`
-    })
-}
-
-daily.addEventListener('click' ,handelDaily)
-weekly.addEventListener('click' , handelWeekly)
-monthly.addEventListener('click', handelMonthly)
-
-
+  
+    // Selected period styling - add/remove active selection class
+    const selectors = document.getElementsByClassName('period-select');
+    for (let selector of selectors) {
+      selector.classList.remove('active');
+    }
+    document.getElementById(period).classList.add('active');
+  }
 
 
 

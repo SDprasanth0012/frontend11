@@ -1,118 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
-<head> 
+<head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-     
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
   <title>Frontend Mentor | Time tracking dashboard</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <link rel="stylesheet" href="style.css">
-  <script defer src="main.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
 </head>
-<body> 
-  <main>
+<body>
 
-    <div class="container">
-      <div class = "controls">  
-        <div class="profile">
-          <Img src="images/image-jeremy.png" alt ="avatar" width="60" height="60">
-            <div class="profile-for">
-              <p class="profile-id">Report for</p>
-              <p class="profile-name">Jeremy Robson</p>
-            </div>
+  <main>
+    <div class="dashboard-container">
+      <!-- dashboard user card -->
+      <div class="user-card dashboard-card">
+        <div class="user-card-details">
+          <img src="./images/image-jeremy.png" alt="Jeremy Robson's avatar">
+          <div class="user-card-title">
+            <p>Report for</p>
+            <h1>Jeremy Robson</h1>
           </div>
-        <div class="stats">
-            <p id="daily">Daily</p>
-            <p id="weekly">Weekly</p>
-            <p id="monthly">Monthly</p> 
+        </div>
+        <div id="period-selectors" class="period-selectors">
+          <p id="daily" class="period-select">Daily</p>
+          <p id="weekly" class="period-select">Weekly</p>
+          <p id="monthly" class="period-select">Monthly</p>
+        </div>
+      </div>
+      <!-- work result -->
+      <div class="work result-card dashboard-card">
+        <div class="result-card-content">
+          <div class="result-header">
+            <h2>Work</h2>
+            <svg width="21" height="5" xmlns="http://www.w3.org/2000/svg"><path d="M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z" fill="#BBC0FF" fill-rule="evenodd"/></svg>
           </div>
+          <!-- result body content dynmaically rendered? -->
+          <div class="result-body">
+            <p class="current-result"><span class="current-data">...</span></p>
+            <p class="previous-result">Last Week - <span class="previous-data">...</span></p>
+          </div>
+        </div>
+      </div>
+      <!-- play result -->
+      <div class="play result-card dashboard-card">
+        <div class="result-card-content">
+          <div class="result-header">
+            <h2>Play</h2>
+            <svg width="21" height="5" xmlns="http://www.w3.org/2000/svg"><path d="M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z" fill="#BBC0FF" fill-rule="evenodd"/></svg>
+          </div>
+          <div class="result-body">
+            <p class="current-result"><span class="current-data">...</span></p>
+            <p class="previous-result">Last Week - <span class="previous-data">...</span></p>
+          </div>
+        </div>
+      </div>
+      <!-- study result -->
+      <div class="study result-card dashboard-card">
+        <div class="result-card-content">
+          <div class="result-header">
+            <h2>Study</h2>
+            <svg width="21" height="5" xmlns="http://www.w3.org/2000/svg"><path d="M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z" fill="#BBC0FF" fill-rule="evenodd"/></svg>
+          </div>
+          <div class="result-body">
+            <p class="current-result"><span class="current-data">...</span></p>
+            <p class="previous-result">Last Week - <span class="previous-data">...</span></p>
+          </div>
+        </div>
+      </div>
+      <!-- exercise result -->
+      <div class="exercise result-card dashboard-card">
+        <div class="result-card-content">
+          <div class="result-header">
+            <h2>Exercise</h2>
+            <svg width="21" height="5" xmlns="http://www.w3.org/2000/svg"><path d="M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z" fill="#BBC0FF" fill-rule="evenodd"/></svg>
+          </div>
+          <div class="result-body">
+            <p class="current-result"><span class="current-data">...</span></p>
+            <p class="previous-result">Last Week - <span class="previous-data">...</span></p>
+          </div>
+        </div>
+      </div>
+      <!-- social result -->
+      <div class="social result-card dashboard-card">
+        <div class="result-card-content">
+          <div class="result-header">
+            <h2>Social</h2>
+            <svg width="21" height="5" xmlns="http://www.w3.org/2000/svg"><path d="M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z" fill="#BBC0FF" fill-rule="evenodd"/></svg>
+          </div>
+          <div class="result-body">
+            <p class="current-result"><span class="current-data">...</span></p>
+            <p class="previous-result">Last Week - <span class="previous-data">...</span></p>
+          </div>
+        </div>
+      </div>
+      <!-- self care result -->
+      <div class="self-care result-card dashboard-card">
+        <div class="result-card-content">
+          <div class="result-header">
+            <h2>Self Care</h2>
+            <svg width="21" height="5" xmlns="http://www.w3.org/2000/svg"><path d="M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z" fill="#BBC0FF" fill-rule="evenodd"/></svg>
+          </div>
+          <div class="result-body">
+            <p class="current-result"><span class="current-data">...</span></p>
+            <p class="previous-result">Last Week - <span class="previous-data">...</span></p>
+          </div>
+        </div>
       </div>
 
-        <div class="card work-card">
-          <Img src="images/icon-work.svg" alt="card">
-            <div class="detail">
-              <div class="category">
-                <p class="category-name">Work</p>
-                <p>...</p>
-              </div>
-              <div class="time">
-                <p class="current work-cur">5hrs</p>
-                <p class="Previous work-prev">Previous - 7hrs</p>
-              </div>
-            </div>
-             </div>
-        <div class="card play-card">
-              <Img src="images/icon-play.svg" alt="card">
-              <div class="detail">
-                <div class="category">
-                  <p class="category-name">Play</p>
-                  <p>...</p>
-                </div>
-                <div class="time">
-                  <p class="current play-cur">1hr</p>
-                  <p class="Previous play-prev">Previous - 2hrs</p>
-                </div>
-              </div>
-             </div>  
-        <div class="card study-card">
-              <Img src="images/icon-study.svg" alt="card">
-                <div class="detail">
-                  <div class="category">
-                    <p class="category-name">study</p>
-                    <p>...</p>
-                  </div>
-                  <div class="time">
-                    <p class="current study-cur">0 hrs</p>
-                    <p class="Previous study-prev">Previous - 1 hr</p>
-                  </div>
-                </div>
-             </div>
-        <div class="card exercise-card">
-                <Img src="images/icon-exercise.svg" alt="card">
-                  <div class="detail">
-                    <div class="category">
-                      <p class="category-name">Exercise</p>
-                      <p>...</p>
-                    </div>
-                    <div class="time">
-                      <p class="current exercise-cur">1hr</p>
-                      <p class="Previous exercise-prev">Previous - 1hrs</p>
-                    </div>
-                  </div>
-             </div>      
-        <div class="card social-card">
-                  <Img src="images/icon-social.svg" alt="card">
-                    <div class="detail">
-                      <div class="category">
-                        <p class="category-name">Social</p>
-                        <p>...</p>
-                      </div>
-                      <div class="time">
-                        <p class="current social-cur">1hr</p>
-                        <p class="Previous socila-prev">Previous - 1hrs</p>
-                      </div>
-                    </div>
-             </div>
-        <div class="card self-care-card">
-                    <Img src="images/icon-self-care.svg" alt="card">
-                      <div class="detail">
-                        <div class="category">
-                          <p class="category-name">Self Care</p>
-                          <p>...</p>
-                        </div>
-                        <div class="time">
-                          <p class="current self-cur">0hr</p>
-                          <p class="Previous self-prev">Previous - 1hr</p>
-                        </div>
-                      </div>
-             </div>
-    </div>
+    </div> <!-- end dashboard container-->
+    
   </main>
+  
+  <script src="./main.js"></script>
 </body>
 </html>

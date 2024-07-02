@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+     
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Time tracking dashboard</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <link rel="stylesheet" href="style.css">
+  <script defer src="main.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+</head>
+<body> 
+  <main>
+
+    <div class="container">
+      <div class = "controls">  
+        <div class="profile">
+          <Img src="images/image-jeremy.png" alt ="avatar" width="60" height="60">
+            <div class="profile-for">
+              <p class="profile-id">Report for</p>
+              <p class="profile-name">Jeremy Robson</p>
+            </div>
+          </div>
+        <div class="stats">
+            <p id="daily">Daily</p>
+            <p id="weekly">Weekly</p>
+            <p id="monthly">Monthly</p> 
+          </div>
+      </div>
+
+        <div class="card work-card">
+          <Img src="images/icon-work.svg" alt="card">
+            <div class="detail">
+              <div class="category">
+                <p class="category-name">Work</p>
+                <p>...</p>
+              </div>
+              <div class="time">
+                <p class="current work-cur">5hrs</p>
+                <p class="Previous work-prev">Previous - 7hrs</p>
+              </div>
+            </div>
+             </div>
+        <div class="card play-card">
+              <Img src="images/icon-play.svg" alt="card">
+              <div class="detail">
+                <div class="category">
+                  <p class="category-name">Play</p>
+                  <p>...</p>
+                </div>
+                <div class="time">
+                  <p class="current play-cur">1hr</p>
+                  <p class="Previous play-prev">Previous - 2hrs</p>
+                </div>
+              </div>
+             </div>  
+        <div class="card study-card">
+              <Img src="images/icon-study.svg" alt="card">
+                <div class="detail">
+                  <div class="category">
+                    <p class="category-name">study</p>
+                    <p>...</p>
+                  </div>
+                  <div class="time">
+                    <p class="current study-cur">0 hrs</p>
+                    <p class="Previous study-prev">Previous - 1 hr</p>
+                  </div>
+                </div>
+             </div>
+        <div class="card exercise-card">
+                <Img src="images/icon-exercise.svg" alt="card">
+                  <div class="detail">
+                    <div class="category">
+                      <p class="category-name">Exercise</p>
+                      <p>...</p>
+                    </div>
+                    <div class="time">
+                      <p class="current exercise-cur">1hr</p>
+                      <p class="Previous exercise-prev">Previous - 1hrs</p>
+                    </div>
+                  </div>
+             </div>      
+        <div class="card social-card">
+                  <Img src="images/icon-social.svg" alt="card">
+                    <div class="detail">
+                      <div class="category">
+                        <p class="category-name">Social</p>
+                        <p>...</p>
+                      </div>
+                      <div class="time">
+                        <p class="current social-cur">1hr</p>
+                        <p class="Previous socila-prev">Previous - 1hrs</p>
+                      </div>
+                    </div>
+             </div>
+        <div class="card self-care-card">
+                    <Img src="images/icon-self-care.svg" alt="card">
+                      <div class="detail">
+                        <div class="category">
+                          <p class="category-name">Self Care</p>
+                          <p>...</p>
+                        </div>
+                        <div class="time">
+                          <p class="current self-cur">0hr</p>
+                          <p class="Previous self-prev">Previous - 1hr</p>
+                        </div>
+                      </div>
+             </div>
+    </div>
+  </main>
+</body>
+</html>

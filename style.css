@@ -1,0 +1,189 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root {
+    --color-Blue: hsl(246, 80%, 60%);
+    --color-Light-redit : hsl(15, 100%, 70%);
+    --color-Soft-blue : hsl(195, 74%, 62%);
+    --color-Light-red : hsl(348, 100%, 68%);
+    --color-Lime-green : hsl(145, 58%, 55%);
+    --color-Violet : hsl(264, 64%, 52%);
+    --color-Soft-orange : hsl(43, 84%, 65%);
+    --color-Very-dark-blue: hsl(226, 43%, 10%);
+    --color-Dark-blue: hsl(235, 46%, 20%);
+    --color-Desaturated-blue: hsl(235, 45%, 61%);
+    --color-Pale-Blue: hsl(236, 100%, 87%);
+    --font : "Rubik", sans-serif;
+}
+
+body {
+    background-color: var(--color-Very-dark-blue);
+    font-family: var(--font);
+}
+.container {
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.controls {
+    color:  var(--color-Pale-Blue);
+    background-color: var(--color-Dark-blue);
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    margin-top: 3rem;
+}
+.profile {
+    background-color: var(--color-Blue);
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding: 2rem;
+    width: 100%;
+    border-radius: 1rem;
+    border-radius: 1rem;
+}
+.profile >Img {
+    margin-left: 1rem;
+    border: 2px solid white;
+    border-radius: 50%;
+}
+.profile-for {
+    margin-left: 0.7rem;
+}
+.profile-id{
+    font-weight: 300;
+    font-size: 0.8rem;
+}
+.profile-name {
+    font-style: bold;
+    font-weight: 500;
+    font-size: 1.2rem;
+}
+.stats {
+    display: flex;
+    font-weight: 300;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 1rem;
+    font-size: 0.8rem;
+}
+.stats>p {
+    cursor: pointer;
+}
+.detail:hover {
+    background-color: var(--color-Desaturated-blue);
+
+}
+.stats>p:hover {
+    color:white;
+    font-weight: 500;
+}
+.card {
+    height: 150px;
+    margin: 1.5rem 0 3rem 0;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    color: white;
+}
+.work-card{
+    background-color:var(--color-Light-redit) ;
+}
+.play-card{
+    background-color: var(--color-Soft-blue);
+}
+.study-card{
+    background-color: var(--color-Light-red) ;
+}
+.exercise-card{
+    background-color: var(--color-Lime-green) ;
+}
+.social-card{
+    background-color:var(--color-Violet) ;
+}
+.self-care-card{
+    background-color:var(--color-Soft-orange) ;
+}
+Img{
+    margin-left: 14rem;
+    width: 60px;
+    height: 60px;
+}
+.detail {
+    background-color: var(--color-Dark-blue);
+    padding: 1rem;
+    position: relative;
+    border-radius: 1rem;
+    width: 100%;
+    cursor: pointer;
+    bottom: 30px;
+}
+.category,.time {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+.category-name {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+.current {
+    font-size: 2.3rem;
+    font-weight: 200;
+}
+.previous {
+    font-weight: 400;
+    font-size: 1rem;
+}
+@media (min-width : 1296px){
+    .container {
+        display: grid;
+        grid-template-columns: repeat(4,300px);
+        grid-template-rows: 200px 200px;
+        place-items: center;
+        place-content: center;
+        gap : 50px;
+        width: 100%;
+        height : 100vh;
+    }
+    .controls {
+        grid-column: 1/2;
+        grid-row : 1/3
+    }
+    .profile {
+        height: 320px;
+        gap : 50px
+    }
+    
+    
+    .time, .profile, .profile-for, .stats {
+        flex-direction: column;
+        align-items: start;
+    }
+    .profile-id {
+        font-size: 1.5rem;
+    }
+    .profile-name{
+        font-size: 2.5rem;
+    }
+    .stats {
+        font-size: 1.3rem;
+        gap : 25px;
+        padding: 2rem;
+    }
+    .stats>P:hover {
+        font-size: 1.4rem;
+        color : white;
+        font-style: bold;
+    }
+    .card {
+        margin-bottom: 7rem;
+    }
+    .current {
+        font-size: 2.5rem;
+        font-weight: 300;
+        opacity: 0.8;
+    }
+}
